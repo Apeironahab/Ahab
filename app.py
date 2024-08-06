@@ -7,6 +7,14 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+#parte nueva hasta port 5000
+@app.route('/')
+def home():
+    return "Hello, world!"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+
 # Ruta para manejar la compra de criptomonedas
 @app.route('/buy', methods=['POST'])
 def buy_crypto():
